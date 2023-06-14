@@ -52,7 +52,7 @@ const Header = ({ setCreatePostModalOpen }) => {
                         <></>
                     )}
                     {/* Phantom Connect Button Goes Here */}
-                    <button className={style.button}>Connect Wallet Here</button>
+                    <WalletMultiButton />
                 </div>
             </div>
         </nav>
