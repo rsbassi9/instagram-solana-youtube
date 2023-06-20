@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import { useEffect, useMemo, useState } from "react";
 import { RPC_ENDPOINT } from "../utils";
+import { GlobalState } from '../state/global';
 
 //Wallet Imports
 import {
@@ -50,9 +51,9 @@ function MyApp({ Component, pageProps }) {
         <WalletModalProvider>
           {
             mounted && (
-              //<GlobalState>
+              <GlobalState>
                 <Component {...pageProps} />
-              //</GlobalState>
+              </GlobalState>
             )
           }
         </WalletModalProvider>

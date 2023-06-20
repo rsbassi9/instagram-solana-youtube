@@ -28,14 +28,14 @@ export const GlobalState = ({children}) => {
 
     // get a connection and wallet
     const { connection } = useConnection()
-    const { wallet } = useAnchorWallet()
+    const  wallet  = useAnchorWallet()
 
     //set up useEffect to run on create, upload, or delete of a component 
     useEffect(()=> {
 
         //check if theres a connection and wallet. if not, set the wallet to empty. if there is, set the program to whatever it is
         if(connection){
-            setProgram(getprogram(connection, wallet ?? {}))
+            setProgram(getProgram(connection, wallet ?? {}))
         } else {
             setProgram(null)
         }

@@ -15,9 +15,10 @@ export const getProgram = (connection, wallet) => {
   return program;
 };
 
+//A function to get the users publickey from Solana using the seeds we determined in SeaHorse
 export const getUserAccountPk = async (owner) => {
   return (
-    await PublicKey.findProgramAddress(
+    await PublicKey.findProgramAddressSync(
       [Buffer.from("user"), owner.toBuffer()],
       PROGRAM_ID
     )
@@ -26,7 +27,7 @@ export const getUserAccountPk = async (owner) => {
 
 export const getPostAccountPk = async (owner, id) => {
   return (
-    await PublicKey.findProgramAddress(
+    await PublicKey.findProgramAddressSync(
       [
         Buffer.from("post"),
         owner.toBuffer(),
@@ -39,7 +40,7 @@ export const getPostAccountPk = async (owner, id) => {
 
 export const getLikeAccountPk = async (owner, id, liker) => {
   return (
-    await PublicKey.findProgramAddress(
+    await PublicKey.findProgramAddressSync(
       [
         Buffer.from("like"),
         owner.toBuffer(),
