@@ -5,6 +5,7 @@ import HomeRightBar from '../components/HomeRightBar';
 import FeedItem from '../components/feed/Item';
 import { useState } from 'react';
 import { Toaster } from 'react-hot-toast';
+import { useGlobalState } from '../hooks';
 
 import EditPostModal from '../components/modals/EditPostModal';
 import CreatePostModal from '../components/modals/CreatePostModal';
