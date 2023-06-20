@@ -3,6 +3,7 @@ import { PublicKey } from "@solana/web3.js";
 
 import { PROGRAM_ID } from "./constants";
 
+// This function lets us see into our Solana program and access the fucntions
 export const getProgram = (connection, wallet) => {
   const IDL = require("./idl.json");
   const provider = new AnchorProvider(

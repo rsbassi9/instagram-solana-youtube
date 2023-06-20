@@ -8,4 +8,5 @@ import { PublicKey } from "@solana/web3.js";
 
 export const RPC_ENDPOINT = "https://quiet-flashy-cherry.solana-devnet.discover.quiknode.pro/2f6b70a2c5f5be9a0e478c0857e4078d4cd9bde1/";
 
-export const PROGRAM_ID = new PublicKey("5ExEq9ZxGfwSyw5ov4UFK7ws9NpDf2KnUk3wLqfAir4m")
+// Use the public key from Solana Playground variable re_id
+export const PROGRAM_ID = new PublicKey("5XWhek87bjcFELy2Kj8AMatnYzawL5AMAmexzSfHC1JD")
