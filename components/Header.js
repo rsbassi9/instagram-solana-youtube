@@ -31,9 +31,12 @@ const style = {
 }
 
 const Header = ({ setCreatePostModalOpen }) => {
-    const router = useRouter()
 
-    const hasUserAccount = true
+    const {
+        isConnected,
+        hasUserAccount,
+        createUser,
+    } = useGlobalState()
 
     return (
         <nav className={style.wrapper}>

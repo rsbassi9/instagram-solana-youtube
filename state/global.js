@@ -117,10 +117,34 @@ export const GlobalState = ({children}) => {
         fetchUserAccount();
     }, [program, wallet, isConnected]);
 
+    // Create user
+    const createUser = useCallback(async () => {
+        if(!program) return; 
+
+        try{
+            const txHash = await program.methods
+                .createUser()
+                .accounts({
+                    user: await getUserAccountPk(wallet.publicKey),
+                    owner: wallet.publicKey,
+                })
+                .rpc()
+            await connection.confirmTransaction(txHash)
+            toast.success("Created user!")
+            await fetchUserAccount();
+        } catch (e){
+            console.log("Couldn't create user", e.message)
+            toast.error("Creating user failed!")
+        }
+    
+    })
+
     return(
         <GlobalContext.Provider
             value = {{
-                program
+                isConnected,
+                hasUserAccount: userAccount ? true : false,
+                createUser,
             }}
         >
             {children}
